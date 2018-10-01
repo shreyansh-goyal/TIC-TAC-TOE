@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="libs/angular.min.js"></script>
+    <script src="Button.js"></script>
+    <script>const app = angular.module("shopapp",[]);</script>
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+    <style>
+    button
+    {
+        height:100px;
+        width:100px;
+        background-color:aqua;
+    }
+    .align{
+        text-align: center;
+    }
+    </style>
+</head>
+<body ng-app="shopapp"> 
+    <h1 class="align">TIC TAC TOE</h1>
+    <div ng-controller="myctrl">
+        <table ng-click="user_update()" align="center">
+            <tr>
+                <td ng-repeat="i in [1,2,3]">
+                    <button ng-click="print(i)">{{buttons[i-1].value}}</button>
+                </td>
+            </tr>
+            <tr>
+                <td ng-repeat="i in [4,5,6]">
+                    <button ng-click="print(i)">{{buttons[i-1].value}}</button>
+                </td>
+            </tr>
+            <tr>
+                <td ng-repeat="i in [7,8,9]">
+                    <button ng-click="print(i)">{{buttons[i-1].value}}</button>
+                </td>
+            </tr>
+        </table>
+
+        <p class="align">CHANCE OF: PLAYER  {{user_no}}</p>
+        <br>
+        <br>
+        <p class="align">{{winner}}</p>
+    </div>
+</body>
+</html>
